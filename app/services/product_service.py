@@ -1,31 +1,17 @@
-from app.data_access.product_supabase import *
+from app.data_access.product_dba import *
 from app.models.product import Product
-import json
 
-# get list of products from data
-def getAllProducts() :
-    products = dataGetProducts()
-    return products
+def getAllProducts():
+    return dataGetProducts()
 
-def getProduct(id) :
+def getProduct(id):
     return dataGetProduct(id)
 
-# add new todo using data access
-def newProduct(input: Product) :
-    # add product (via dataaccess)
-    new_product = dataAddProduct(input)
+def newProduct(input: Product):
+    return dataAddProduct(input)
 
-    # return new product
-    return new_product
+def updateProduct(input: Product):
+    return dataUpdateProduct(input)
 
-# add new todo using data access
-def updateProduct(input: Product) :
-    # update product
-    product = dataUpdateProduct(input)
-
-    # return updated product
-    return product
-
-
-def deleteProduct(id : int) :
-    result = dataDeleteProduct(id)
+def deleteProduct(id: int):
+    return dataDeleteProduct(id)
